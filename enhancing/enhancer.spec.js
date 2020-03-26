@@ -19,7 +19,37 @@ describe("enhancer.js", function() {
       });
     });
 
-    describe('success()', function(){
+    describe('succeed()', function(){
+        it('testing enhancement & durability for succeeding', function (){
+           const testItem = {
+               enhancement: 18,
+               durability: 40
+           }
 
+           const controlItem = {
+               enhancement: 19,
+               durability:30
+           }
+           
+           
+            expect(succeed(testItem)).toStrictEqual(controlItem);
+        })
+    })
+
+    describe('fail()', function(){
+        it('testing fail', function (){
+           const testItem = {
+               enhancement: 3,
+               durability: 40
+           }
+
+           const controlItem = {
+               enhancement: 3,
+               durability:35
+           }
+           
+           
+            expect(fail(testItem)).toEqual(controlItem);
+        })
     })
 });

@@ -6,12 +6,29 @@ module.exports = {
 };
 
 function succeed(item) {
+  if(item.enhancement > 15){
+    const newItem = {
+      ...item,
+      durability: item.durability - 10,
+      enhancement: item.enhancement + 1
+  }
+    return newItem;
   
-  return { ...item };
+}
 }
 
+
+  
+
+
 function fail(item) {
-  return { ...item };
+   if(item.enhancement < 15){
+    const newItem = {
+      ...item,
+      durability: item.durability - 5,
+      }
+      return newItem; 
+  }
 }
 
 function repair(item) {
